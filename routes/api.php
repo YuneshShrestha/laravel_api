@@ -23,4 +23,5 @@ Route::get('/device/{id?}', [DeviceController::class, 'showData']);
 //  ? means optional
 Route::post('/post', [DeviceController::class, 'postData']);
 Route::put('/update', [DeviceController::class, 'updateRecord']);
+Route::get('/search/{data}', [DeviceController::class, 'search']);
 

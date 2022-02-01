@@ -32,4 +32,13 @@ class DeviceController extends Controller
             return ['status'=>'failed'];
         }
     }
+    public function search($data){
+        $device = Device::where('name','like','%'.$data.'%')->get();
+        if(count($device)>0){
+            return $device;
+        }
+        else{
+            return ['status'=>'failed'];
+        }
+    }
 }
