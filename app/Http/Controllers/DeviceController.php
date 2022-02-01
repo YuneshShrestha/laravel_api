@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Device;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class DeviceController extends Controller
@@ -49,6 +50,20 @@ class DeviceController extends Controller
         }
         else{
             return ['status'=>'failed'];
+        }
+    }
+    public function validateRecord(Request $request){  
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+        ]);
+        if ($validator->fails()) {
+            return response()->json([$validator->errors()], 401);
+        }
+        else{
+            $device = new Device;
+            $device->name = $request->name;
+            $device->save();
+            return ['status'=>'success'];
         }
     }
     // public function deleteMultipleRecord(Request $request){

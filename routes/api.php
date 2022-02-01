@@ -25,5 +25,7 @@ Route::post('/post', [DeviceController::class, 'postData']);
 Route::put('/update', [DeviceController::class, 'updateRecord']);
 Route::get('/search/{data}', [DeviceController::class, 'search']);
 Route::delete('/delete/{ids}', [DeviceController::class, 'deleteRecord']);
+Route::get('/validate', [DeviceController::class, 'validateRecord']);
+
 // Route::delete('/deleteMultiple/{}', [DeviceController::class, 'deleteMultipleRecord']);
 
