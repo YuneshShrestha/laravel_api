@@ -41,4 +41,29 @@ class DeviceController extends Controller
             return ['status'=>'failed'];
         }
     }
+    public function deleteRecord($ids){
+        $status = Device::whereIn('id',explode(',',$ids))->delete();
+        // $status = $device->delete();
+        if($status){
+            return ['status'=>'success'];
+        }
+        else{
+            return ['status'=>'failed'];
+        }
+    }
+    // public function deleteMultipleRecord(Request $request){
+    //     // return $request;
+    //     // $data = [];
+    //     foreach($request as $id){
+    //         $device = Device::find($id);
+    //         $status = $device->delete();
+    //     }
+    //     if($status){
+    //             return ['status'=>'success'];
+    //         }
+    //         else{
+    //             return ['status'=>'failed'];
+    //         }
+    //     }
+    
 }

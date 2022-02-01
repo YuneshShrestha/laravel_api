@@ -24,4 +24,6 @@ Route::get('/device/{id?}', [DeviceController::class, 'showData']);
 Route::post('/post', [DeviceController::class, 'postData']);
 Route::put('/update', [DeviceController::class, 'updateRecord']);
 Route::get('/search/{data}', [DeviceController::class, 'search']);
+Route::delete('/delete/{ids}', [DeviceController::class, 'deleteRecord']);
+// Route::delete('/deleteMultiple/{}', [DeviceController::class, 'deleteMultipleRecord']);
 
