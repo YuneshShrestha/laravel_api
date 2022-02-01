@@ -21,4 +21,15 @@ class DeviceController extends Controller
         $device->save();
         return ['status'=>'success'];
     }
+    public function updateRecord(Request $request){
+        $device = Device::find($request->id);
+        $device->name = $request->name;
+        $status = $device->save();
+        if($status){
+            return ['status'=>'success'];
+        }
+        else{
+            return ['status'=>'failed'];
+        }
+    }
 }

@@ -22,4 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/device/{id?}', [DeviceController::class, 'showData']);
 //  ? means optional
 Route::post('/post', [DeviceController::class, 'postData']);
+Route::put('/update', [DeviceController::class, 'updateRecord']);
 
