@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,3 +33,4 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 
 
 Route::post("/login",[UserController::class,'index']);
+Route::post("/upload",[FileController::class,'index']);
